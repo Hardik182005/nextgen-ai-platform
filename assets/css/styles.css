@@ -159,7 +159,7 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
 .loader__bar { width: 160px; height: 3px; border-radius: 3px; background: var(--surface-2); overflow: hidden; }
 .loader__bar i { display: block; height: 100%; width: 40%; border-radius: 3px;
   background: linear-gradient(90deg, var(--forsythia), var(--saffron));
-  animation: load 480ms var(--ease-inout) forwards; }
+  animation: load 300ms var(--ease-inout) forwards; }
 @keyframes load { from { transform: translateX(-120%); } to { transform: translateX(420%); } }
 @keyframes floaty { to { transform: translateY(-7px); } }
 

@@ -22,8 +22,9 @@
   if (reduceMotion) {
     finishLoader();
   } else {
-    // Budget: bar animation is 480ms; lift at 460ms -> total < 500ms.
-    window.setTimeout(finishLoader, 460);
+    // Budget: loader bar is 300ms; lift at 300ms keeps the whole
+    // entry orchestration comfortably under the 500ms cap.
+    window.setTimeout(finishLoader, 300);
   }
 
   /* ---------- Hero staggered entrance (WAAPI-free, CSS class) ---------- */
@@ -33,9 +34,9 @@
       el.style.transitionDelay = i * 70 + "ms"; // 3 lines -> ~210ms tail
       el.classList.add("in");
     });
-    // Other hero blocks
+    // Other hero blocks — tight stagger to stay inside the 500ms budget
     $$(".hero [data-reveal]").forEach((el, i) => {
-      el.style.transitionDelay = 120 + i * 60 + "ms";
+      el.style.transitionDelay = i * 35 + "ms";
       el.classList.add("in");
     });
   }
