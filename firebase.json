@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "site": "quanta-ai",
+    "site": "quanta-ai-6e963",
     "public": ".",
     "cleanUrls": true,
     "trailingSlash": false,

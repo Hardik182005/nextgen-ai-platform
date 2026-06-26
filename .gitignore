@@ -15,3 +15,8 @@ FB_Round_1.pdf
 
 # Node (not used at runtime, but keep clean)
 node_modules/
+
+# Firebase / Agent
+.firebase/
+.claude/
+
