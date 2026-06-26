@@ -408,8 +408,9 @@ section { padding-block: clamp(3.5rem, 8vw, 7rem); position: relative; }
 /* ---------- Feature 1: Pricing ---------- */
 .pricing__controls { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 2.5rem; }
 .billing-toggle { position: relative; display: inline-flex; padding: 5px; border: 1px solid var(--border); border-radius: 999px; background: var(--surface-2); }
-.billing-toggle__opt { position: relative; z-index: 1; display: inline-flex; align-items: center; gap: .45rem; padding: .5rem 1.1rem;
-  font-family: var(--font-mono); font-size: .85rem; color: var(--text-muted); border-radius: 999px; transition: color var(--t-micro) var(--ease-out); }
+.billing-toggle__opt { position: relative; z-index: 1; flex: 1 1 0; display: inline-flex; align-items: center; justify-content: center; gap: .45rem;
+  padding: .5rem 1.1rem; white-space: nowrap; font-family: var(--font-mono); font-size: .85rem; color: var(--text-muted); border-radius: 999px;
+  transition: color var(--t-micro) var(--ease-out); }
 .billing-toggle__opt.is-active { color: var(--noir); }
 .billing-toggle__knob { position: absolute; z-index: 0; top: 5px; bottom: 5px; left: 5px; width: calc(50% - 5px);
   background: var(--forsythia); border-radius: 999px; transition: transform var(--t-micro) var(--ease-out); }
