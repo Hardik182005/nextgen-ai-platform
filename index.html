@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="noir">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="dark" />
+  <meta name="theme-color" content="#172B36" />
+
+  <title>Quanta — Autonomous AI Data Automation Platform</title>
+  <meta name="description" content="Quanta is the next-gen AI platform that deploys autonomous agents to automate complex data workflows. Matrix-driven pricing, real-time telemetry, and enterprise-grade orchestration — built for scale." />
+  <meta name="keywords" content="AI data automation, autonomous agents, AI platform, workflow automation, data orchestration, enterprise AI, LLM infrastructure" />
+  <meta name="author" content="Quanta" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="canonical" href="https://mediflow-nexus-2026.vercel.app/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Quanta" />
+  <meta property="og:title" content="Quanta — Autonomous AI Data Automation Platform" />
+  <meta property="og:description" content="Deploy autonomous AI agents to automate complex data workflows. Matrix-driven pricing, real-time telemetry, enterprise-grade orchestration." />
+  <meta property="og:url" content="https://mediflow-nexus-2026.vercel.app/" />
+  <meta property="og:image" content="https://mediflow-nexus-2026.vercel.app/assets/img/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Quanta — Autonomous AI Data Automation Platform" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Quanta — Autonomous AI Data Automation Platform" />
+  <meta name="twitter:description" content="Deploy autonomous AI agents to automate complex data workflows at enterprise scale." />
+  <meta name="twitter:image" content="https://mediflow-nexus-2026.vercel.app/assets/img/og-image.png" />
+  <meta name="twitter:image:alt" content="Quanta product preview" />
+
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/assets/img/favicon.svg" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+  <!-- Self-hosted fonts (no external resources) -->
+  <link rel="preload" href="/assets/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/assets/fonts/jetbrainsmono-700.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/assets/fonts/fonts.css" />
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Quanta",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "description": "Autonomous AI platform for end-to-end data automation and agent orchestration.",
+    "offers": {
+      "@type": "AggregateOffer",
+      "priceCurrency": "USD",
+      "lowPrice": "29",
+      "highPrice": "199",
+      "offerCount": "3"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "318"
+    }
+  }
+  </script>
+</head>
+<body>
+  <!-- ===== Loader (≤500ms orchestration, non-blocking) ===== -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader__mark">
+      <span class="icon icon--cube" aria-hidden="true"></span>
+    </div>
+    <div class="loader__bar"><i></i></div>
+  </div>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ===== Header ===== -->
+  <header class="site-header" id="top">
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="Quanta home">
+        <span class="icon icon--cube brand__mark" aria-hidden="true"></span>
+        <span class="brand__name">QUANTA</span>
+      </a>
+
+      <nav class="nav__links" aria-label="Primary">
+        <a href="#features">Platform</a>
+        <a href="#telemetry">Telemetry</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#proof">Customers</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+
+      <div class="nav__actions">
+        <button class="iconbtn" id="searchBtn" aria-label="Search" type="button">
+          <span class="icon icon--search" aria-hidden="true"></span>
+        </button>
+        <a class="btn btn--ghost nav__signin" href="#pricing">Sign in</a>
+        <a class="btn btn--solid" href="#pricing">Start free</a>
+        <button class="iconbtn nav__toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav" type="button">
+          <span class="icon icon--menu" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile nav -->
+    <div class="mobile-nav" id="mobileNav" data-open="false" aria-hidden="true">
+      <button class="iconbtn mobile-nav__close" id="menuClose" aria-label="Close menu" type="button">
+        <span class="icon icon--x" aria-hidden="true"></span>
+      </button>
+      <nav aria-label="Mobile">
+        <a href="#features">Platform</a>
+        <a href="#telemetry">Telemetry</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#proof">Customers</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <a class="btn btn--solid" href="#pricing">Start free</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ===== Hero ===== -->
+    <section class="hero" aria-labelledby="hero-title">
+      <canvas class="hero__grid" id="heroGrid" aria-hidden="true"></canvas>
+      <div class="hero__glow" aria-hidden="true"></div>
+      <div class="container hero__inner">
+        <p class="eyebrow reveal" data-reveal>
+          <span class="icon icon--cube" aria-hidden="true"></span>
+          Next-Gen AI Data Automation
+        </p>
+        <h1 class="hero__title" id="hero-title">
+          <span class="reveal-line"><span data-reveal>Data pipelines</span></span>
+          <span class="reveal-line"><span data-reveal>that build</span></span>
+          <span class="reveal-line"><span data-reveal class="hl">themselves.</span></span>
+        </h1>
+        <p class="hero__lede reveal" data-reveal>
+          Quanta unleashes autonomous agents that ingest, reason over, and orchestrate your
+          entire data stack — end to end, in real time. You ship intelligence; we delete the glue code.
+        </p>
+        <div class="hero__cta reveal" data-reveal>
+          <a class="btn btn--solid btn--lg" href="#pricing">
+            Build a workflow
+            <span class="icon icon--arrow-right" aria-hidden="true"></span>
+          </a>
+          <button class="btn btn--ghost btn--lg" id="watchDemo" type="button">
+            <span class="icon icon--play" aria-hidden="true"></span>
+            Watch the 2-min demo
+          </button>
+        </div>
+
+        <div class="hero__metrics reveal" data-reveal>
+          <div class="metric"><b data-countup="99.99" data-suffix="%">0%</b><small>Pipeline uptime</small></div>
+          <div class="metric"><b data-countup="84" data-suffix="%">0%</b><small>Less latency</small></div>
+          <div class="metric"><b data-countup="12" data-suffix="M+">0</b><small>Agents deployed</small></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Social proof strip ===== -->
+    <section class="proof-strip" aria-label="Trusted by leading data teams">
+      <div class="container">
+        <p class="proof-strip__label">Powering data automation at</p>
+        <ul class="logos" role="list">
+          <li>Aether Labs</li>
+          <li>Cygnus Health</li>
+          <li>Northwind</li>
+          <li>Helios Bank</li>
+          <li>Vanta Systems</li>
+          <li>Orbital</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== Neural engines ===== -->
+    <section class="engines" aria-labelledby="engines-title">
+      <div class="container engines__inner">
+        <header class="section-head">
+          <p class="kicker"><span class="icon icon--cog" aria-hidden="true"></span> Neural core</p>
+          <h2 id="engines-title" class="balance">
+            Connect your data to the world's most capable
+            <span class="rotator" aria-live="polite">
+              <span class="rotator__item is-active">reasoning models</span>
+              <span class="rotator__item">vector engines</span>
+              <span class="rotator__item">agent runtimes</span>
+            </span>
+          </h2>
+          <p class="section-sub">
+            Low-latency, high-fidelity orchestration across every layer of your stack —
+            with native observability into how each token is processed, indexed, and retrieved.
+          </p>
+        </header>
+        <ul class="engine-pills" role="list">
+          <li><span class="icon icon--arrow-path" aria-hidden="true"></span> Auto-sync</li>
+          <li><span class="icon icon--chart" aria-hidden="true"></span> Live analytics</li>
+          <li><span class="icon icon--cube" aria-hidden="true"></span> Edge nodes</li>
+          <li><span class="icon icon--cog" aria-hidden="true"></span> Self-tuning</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== Feature 2: Bento ↔ Accordion ===== -->
+    <section class="features" id="features" aria-labelledby="features-title">
+      <div class="container">
+        <header class="section-head section-head--left">
+          <p class="kicker"><span class="icon icon--cube" aria-hidden="true"></span> Product</p>
+          <h2 id="features-title">Engineered for autonomy</h2>
+          <p class="section-sub">
+            A modular grid on desktop that fluidly refactors into a touch-optimized accordion on mobile —
+            your active context follows you across every breakpoint.
+          </p>
+        </header>
+
+        <!-- Shared-DOM bento/accordion. JS in bento.js -->
+        <ul class="bento" id="bento" role="list" data-mode="grid">
+          <li class="bento__node bento__node--lg is-active" data-index="0">
+            <button class="bento__head" type="button" aria-expanded="true">
+              <span class="bento__icon"><span class="icon icon--cog" aria-hidden="true"></span></span>
+              <span class="bento__title">Process Automation</span>
+              <span class="bento__chevron icon icon--chevron-down" aria-hidden="true"></span>
+            </button>
+            <div class="bento__panel">
+              <div class="bento__panel-inner">
+                <p>Drag-free, declarative pipelines. Quanta's engine resolves conditional branching,
+                  retries, and error recovery automatically — no orchestration code required.</p>
+                <div class="bento__viz viz-flow" aria-hidden="true">
+                  <span class="node">Trigger</span>
+                  <span class="wire"></span>
+                  <span class="node node--accent">Agent</span>
+                  <span class="wire"></span>
+                  <span class="node">Deliver</span>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li class="bento__node" data-index="1">
+            <button class="bento__head" type="button" aria-expanded="false">
+              <span class="bento__icon"><span class="icon icon--chart" aria-hidden="true"></span></span>
+              <span class="bento__title">Data Intelligence</span>
+              <span class="bento__chevron icon icon--chevron-down" aria-hidden="true"></span>
+            </button>
+            <div class="bento__panel">
+              <div class="bento__panel-inner">
+                <p>Full observability into how your data is processed, indexed, and retrieved by every agent in real time.</p>
+              </div>
+            </div>
+          </li>
+
+          <li class="bento__node" data-index="2">
+            <button class="bento__head" type="button" aria-expanded="false">
+              <span class="bento__icon"><span class="icon icon--arrow-path" aria-hidden="true"></span></span>
+              <span class="bento__title">Continuous Sync</span>
+              <span class="bento__chevron icon icon--chevron-down" aria-hidden="true"></span>
+            </button>
+            <div class="bento__panel">
+              <div class="bento__panel-inner">
+                <p>Bi-directional connectors keep every source in lock-step. Changes propagate in milliseconds, not batches.</p>
+              </div>
+            </div>
+          </li>
+
+          <li class="bento__node" data-index="3">
+            <button class="bento__head" type="button" aria-expanded="false">
+              <span class="bento__icon"><span class="icon icon--link" aria-hidden="true"></span></span>
+              <span class="bento__title">Native Integrations</span>
+              <span class="bento__chevron icon icon--chevron-down" aria-hidden="true"></span>
+            </button>
+            <div class="bento__panel">
+              <div class="bento__panel-inner">
+                <p>200+ secure, ready-to-map integrations. Bring your own custom domain and edge nodes with one click.</p>
+              </div>
+            </div>
+          </li>
+
+          <li class="bento__node bento__node--wide" data-index="4">
+            <button class="bento__head" type="button" aria-expanded="false">
+              <span class="bento__icon"><span class="icon icon--trending" aria-hidden="true"></span></span>
+              <span class="bento__title">Performance Telemetry</span>
+              <span class="bento__chevron icon icon--chevron-down" aria-hidden="true"></span>
+            </button>
+            <div class="bento__panel">
+              <div class="bento__panel-inner">
+                <p>Deep telemetry into agent accuracy, server latency, and token efficiency — surfaced as you ship, not after.</p>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== Telemetry / stats ===== -->
+    <section class="telemetry" id="telemetry" aria-labelledby="telemetry-title">
+      <div class="container telemetry__inner">
+        <header class="section-head section-head--left">
+          <p class="kicker"><span class="icon icon--trending" aria-hidden="true"></span> Product statistics</p>
+          <h2 id="telemetry-title">Optimized for performance</h2>
+          <p class="section-sub">Monitor every neural pulse in real time. Quanta exposes deep telemetry into agent accuracy, server latency, and token efficiency.</p>
+        </header>
+        <div class="gauges">
+          <div class="gauge" data-reveal>
+            <div class="gauge__ring" style="--val:0.86" aria-hidden="true"><b data-countup="86" data-suffix="%">0%</b></div>
+            <p>System load headroom</p>
+          </div>
+          <div class="gauge" data-reveal>
+            <div class="gauge__ring" style="--val:0.99" aria-hidden="true"><b data-countup="99.9" data-suffix="%">0%</b></div>
+            <p>Inference accuracy</p>
+          </div>
+          <div class="gauge" data-reveal>
+            <div class="gauge__ring" style="--val:0.74" aria-hidden="true"><b data-countup="38" data-suffix="ms">0</b></div>
+            <p>Median agent latency</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Feature 1: Pricing matrix ===== -->
+    <section class="pricing" id="pricing" aria-labelledby="pricing-title">
+      <div class="container">
+        <header class="section-head">
+          <p class="kicker"><span class="icon icon--chart" aria-hidden="true"></span> Pricing</p>
+          <h2 id="pricing-title">Scale on your terms</h2>
+          <p class="section-sub">Transparent, matrix-driven pricing across three currencies and two billing cycles. Switch instantly — only the numbers change.</p>
+        </header>
+
+        <!-- Performance-isolated controls -->
+        <div class="pricing__controls" role="group" aria-label="Pricing options">
+          <div class="billing-toggle" id="billingToggle" data-cycle="monthly">
+            <button class="billing-toggle__opt is-active" type="button" data-cycle="monthly" aria-pressed="true">Monthly</button>
+            <button class="billing-toggle__opt" type="button" data-cycle="annual" aria-pressed="false">
+              Annual <span class="save-badge">Save 20%</span>
+            </button>
+            <span class="billing-toggle__knob" aria-hidden="true"></span>
+          </div>
+
+          <div class="currency-select" id="currencySelect">
+            <button class="currency-select__btn" type="button" aria-haspopup="listbox" aria-expanded="false" id="currencyBtn">
+              <span class="currency-select__cur" data-cur-label>₹ INR</span>
+              <span class="icon icon--chevron-down" aria-hidden="true"></span>
+            </button>
+            <ul class="currency-select__menu" role="listbox" aria-label="Currency" id="currencyMenu" hidden>
+              <li role="option" data-cur="INR" aria-selected="true">₹ INR — Indian Rupee</li>
+              <li role="option" data-cur="USD" aria-selected="false">$ USD — US Dollar</li>
+              <li role="option" data-cur="EUR" aria-selected="false">€ EUR — Euro</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Cards are static shells; only price text nodes mutate -->
+        <div class="plans" id="plans">
+          <article class="plan" data-tier="starter">
+            <h3 class="plan__name">Starter</h3>
+            <p class="plan__desc">For solo builders shipping their first autonomous workflows.</p>
+            <p class="plan__price">
+              <span class="plan__cur" data-price-symbol>₹</span><span class="plan__amount" data-price="starter">—</span>
+              <span class="plan__per" data-price-per>/mo</span>
+            </p>
+            <p class="plan__sub" data-price-note="starter">billed monthly</p>
+            <a class="btn btn--ghost plan__cta" href="#top">Start free</a>
+            <ul class="plan__feats" role="list">
+              <li><span class="icon icon--cube" aria-hidden="true"></span> 5 active agents</li>
+              <li><span class="icon icon--arrow-path" aria-hidden="true"></span> Hourly sync</li>
+              <li><span class="icon icon--chart" aria-hidden="true"></span> Core analytics</li>
+            </ul>
+          </article>
+
+          <article class="plan plan--featured" data-tier="pro">
+            <span class="plan__badge">Most popular</span>
+            <h3 class="plan__name">Pro</h3>
+            <p class="plan__desc">For teams running production data automation at scale.</p>
+            <p class="plan__price">
+              <span class="plan__cur" data-price-symbol>₹</span><span class="plan__amount" data-price="pro">—</span>
+              <span class="plan__per" data-price-per>/mo</span>
+            </p>
+            <p class="plan__sub" data-price-note="pro">billed monthly</p>
+            <a class="btn btn--solid plan__cta" href="#top">Start free</a>
+            <ul class="plan__feats" role="list">
+              <li><span class="icon icon--cube" aria-hidden="true"></span> 50 active agents</li>
+              <li><span class="icon icon--arrow-path" aria-hidden="true"></span> Real-time sync</li>
+              <li><span class="icon icon--trending" aria-hidden="true"></span> Advanced telemetry</li>
+              <li><span class="icon icon--link" aria-hidden="true"></span> 200+ integrations</li>
+            </ul>
+          </article>
+
+          <article class="plan" data-tier="enterprise">
+            <h3 class="plan__name">Enterprise</h3>
+            <p class="plan__desc">For organizations with dedicated edge nodes and compliance needs.</p>
+            <p class="plan__price">
+              <span class="plan__cur" data-price-symbol>₹</span><span class="plan__amount" data-price="enterprise">—</span>
+              <span class="plan__per" data-price-per>/mo</span>
+            </p>
+            <p class="plan__sub" data-price-note="enterprise">billed monthly</p>
+            <a class="btn btn--ghost plan__cta" href="#top">Contact sales</a>
+            <ul class="plan__feats" role="list">
+              <li><span class="icon icon--cube" aria-hidden="true"></span> Unlimited agents</li>
+              <li><span class="icon icon--cog" aria-hidden="true"></span> Dedicated edge nodes</li>
+              <li><span class="icon icon--search" aria-hidden="true"></span> SSO &amp; audit logs</li>
+              <li><span class="icon icon--link" aria-hidden="true"></span> Custom integrations</li>
+            </ul>
+          </article>
+        </div>
+        <p class="pricing__foot">Prices computed dynamically from a regional tariff matrix · 20% annual discount applied automatically.</p>
+      </div>
+    </section>
+
+    <!-- ===== Social proof / testimonials ===== -->
+    <section class="proof" id="proof" aria-labelledby="proof-title">
+      <div class="container">
+        <header class="section-head">
+          <p class="kicker"><span class="icon icon--trending" aria-hidden="true"></span> Testimonials</p>
+          <h2 id="proof-title">Trusted by the pioneers</h2>
+          <p class="section-sub">From high-growth startups to enterprise research labs, Quanta is the chosen infrastructure for teams building the next era of AI.</p>
+        </header>
+
+        <div class="testi" id="testi">
+          <div class="testi__track" id="testiTrack">
+            <figure class="testi__card">
+              <blockquote>"Quanta migrated our entire neural pipeline to edge nodes with zero downtime. The reliability is genuinely unmatched."</blockquote>
+              <figcaption><b>Mara Velez</b><span>VP Data, Aether Labs</span><span class="stars" aria-label="5 out of 5">★★★★★</span></figcaption>
+            </figure>
+            <figure class="testi__card">
+              <blockquote>"We went from prototype to a global production launch in weeks. It saved us months of R&amp;D building our own agent layer."</blockquote>
+              <figcaption><b>Devon Park</b><span>CTO, Cygnus Health</span><span class="stars" aria-label="5 out of 5">★★★★★</span></figcaption>
+            </figure>
+            <figure class="testi__card">
+              <blockquote>"The observability tools let us monitor agent accuracy in real time. It's become a vital part of our evaluation workflow."</blockquote>
+              <figcaption><b>Lena Cho</b><span>Head of ML, Northwind</span><span class="stars" aria-label="5 out of 5">★★★★★</span></figcaption>
+            </figure>
+            <figure class="testi__card">
+              <blockquote>"Enterprise-grade by default. The edge-node map alone replaced a whole quarter of platform work for our team."</blockquote>
+              <figcaption><b>Samir Otto</b><span>Platform Lead, Helios Bank</span><span class="stars" aria-label="5 out of 5">★★★★★</span></figcaption>
+            </figure>
+          </div>
+          <div class="testi__nav">
+            <button class="iconbtn" id="testiPrev" aria-label="Previous testimonial" type="button"><span class="icon icon--chevron-left" aria-hidden="true"></span></button>
+            <button class="iconbtn" id="testiNext" aria-label="Next testimonial" type="button"><span class="icon icon--chevron-right" aria-hidden="true"></span></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section class="faq" id="faq" aria-labelledby="faq-title">
+      <div class="container faq__inner">
+        <header class="section-head section-head--left">
+          <p class="kicker"><span class="icon icon--search" aria-hidden="true"></span> Common inquiries</p>
+          <h2 id="faq-title">Everything you need to know</h2>
+          <p class="section-sub">Can't find an answer? <a href="#top">Contact us</a> and a solutions engineer will reach out.</p>
+        </header>
+        <ul class="faq-list" role="list">
+          <li class="faq-item">
+            <button class="faq-item__q" type="button" aria-expanded="false">
+              What is the Quanta platform?
+              <span class="icon icon--chevron-down faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-item__a"><div class="faq-item__a-inner"><p>Quanta is a specialized infrastructure for building and deploying autonomous AI agents. We provide the neural core and edge nodes required to run data-automation workflows at enterprise scale.</p></div></div>
+          </li>
+          <li class="faq-item">
+            <button class="faq-item__q" type="button" aria-expanded="false">
+              How is pricing calculated?
+              <span class="icon icon--chevron-down faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-item__a"><div class="faq-item__a-inner"><p>Every price is derived from a multi-dimensional matrix: a base tier rate, a regional tariff per currency, and a flat 20% discount applied to annual billing. Switching currency or cycle recomputes instantly.</p></div></div>
+          </li>
+          <li class="faq-item">
+            <button class="faq-item__q" type="button" aria-expanded="false">
+              Can I bring my own models?
+              <span class="icon icon--chevron-down faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-item__a"><div class="faq-item__a-inner"><p>Yes. Quanta is model-agnostic — connect frontier reasoning models, your own fine-tunes, or self-hosted weights through a single secure runtime.</p></div></div>
+          </li>
+          <li class="faq-item">
+            <button class="faq-item__q" type="button" aria-expanded="false">
+              Is there a limit to how many agents I can run?
+              <span class="icon icon--chevron-down faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-item__a"><div class="faq-item__a-inner"><p>Starter and Pro tiers include generous agent ceilings, while Enterprise runs unlimited agents across dedicated edge nodes with autoscaling.</p></div></div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== Final CTA ===== -->
+    <section class="cta-final" aria-labelledby="cta-title">
+      <div class="container cta-final__inner">
+        <h2 id="cta-title">Ship intelligence, not glue code.</h2>
+        <p>Spin up your first autonomous workflow in minutes. No credit card required.</p>
+        <a class="btn btn--solid btn--lg" href="#pricing">
+          Get started
+          <span class="icon icon--arrow-right" aria-hidden="true"></span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <div class="container site-footer__grid">
+      <div class="site-footer__brand">
+        <a class="brand" href="#top" aria-label="Quanta home">
+          <span class="icon icon--cube brand__mark" aria-hidden="true"></span>
+          <span class="brand__name">QUANTA</span>
+        </a>
+        <p>Autonomous AI for end-to-end data automation.</p>
+      </div>
+      <nav aria-label="Product">
+        <h3>Product</h3>
+        <a href="#features">Platform</a>
+        <a href="#telemetry">Telemetry</a>
+        <a href="#pricing">Pricing</a>
+      </nav>
+      <nav aria-label="Company">
+        <h3>Company</h3>
+        <a href="#proof">Customers</a>
+        <a href="#faq">FAQ</a>
+        <a href="#top">Careers</a>
+      </nav>
+      <nav aria-label="Connect">
+        <h3>Connect</h3>
+        <a href="#top"><span class="icon icon--link-solid" aria-hidden="true"></span> Docs</a>
+        <a href="#top"><span class="icon icon--link-solid" aria-hidden="true"></span> Status</a>
+        <a href="#top"><span class="icon icon--link-solid" aria-hidden="true"></span> Changelog</a>
+      </nav>
+    </div>
+    <div class="container site-footer__bar">
+      <small>© <span id="year">2026</span> Quanta Labs. All rights reserved.</small>
+      <button class="to-top" id="toTop" aria-label="Back to top" type="button">
+        <span class="icon icon--chevron-up-solid" aria-hidden="true"></span>
+      </button>
+    </div>
+  </footer>
+
+  <!-- ===== Video modal ===== -->
+  <div class="modal" id="videoModal" data-open="false" role="dialog" aria-modal="true" aria-label="Product demo video" hidden>
+    <div class="modal__backdrop" data-close></div>
+    <div class="modal__panel">
+      <button class="iconbtn modal__close" id="modalClose" aria-label="Close video" type="button"><span class="icon icon--x" aria-hidden="true"></span></button>
+      <video controls preload="none" poster="/assets/img/og-image.png">
+        <source src="/assets/media/demo.mp4" type="video/mp4" />
+        Your browser does not support embedded video.
+      </video>
+    </div>
+  </div>
+
+  <script src="/assets/js/pricing.js" defer></script>
+  <script src="/assets/js/bento.js" defer></script>
+  <script src="/assets/js/main.js" defer></script>
+</body>
+</html>
