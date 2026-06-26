@@ -1,0 +1,10 @@
+{
+  "name": "mediflow-nexus-2026",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Quanta — Next-Gen AI Data Automation Platform landing page (static, zero-dependency).",
+  "scripts": {
+    "dev": "npx --yes serve -l 5173 .",
+    "start": "npx --yes serve -l 5173 ."
+  }
+}

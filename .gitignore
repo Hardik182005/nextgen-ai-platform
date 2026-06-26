@@ -1,0 +1,15 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+*.log
+
+# Working extraction artifacts (raw provided assets / scratch)
+_assets_svgs/
+_assets_drive/
+_frames/
+*.zip
+FB_Round_1.pdf
+image.png
+
+# Node (not used at runtime, but keep clean)
+node_modules/
