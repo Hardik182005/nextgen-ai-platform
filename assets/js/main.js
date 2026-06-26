@@ -184,6 +184,33 @@
     });
   });
 
+  /* ---------- Hero pipeline: sequential activation ---------- */
+  const pipeline = $("#pipeline");
+  if (pipeline) {
+    const steps = $$(".pstep", pipeline);
+    function runPipeline() {
+      const total = steps.length;
+      if (reduceMotion) {
+        steps.forEach((s) => s.classList.add("is-on"));
+        pipeline.style.setProperty("--fill", "100%");
+        return;
+      }
+      steps.forEach((step, i) => {
+        setTimeout(() => {
+          step.classList.add("is-on");
+          // grow the connector line to this node
+          pipeline.style.setProperty("--fill", ((i + 1) / total) * 100 + "%");
+        }, 140 * i); // 4 steps -> ~420ms, within budget
+      });
+    }
+    if ("IntersectionObserver" in window) {
+      const po = new IntersectionObserver((es) => {
+        es.forEach((e) => { if (e.isIntersecting) { runPipeline(); po.disconnect(); } });
+      }, { threshold: 0.35 });
+      po.observe(pipeline);
+    } else { runPipeline(); }
+  }
+
   /* ---------- Video modal ---------- */
   const modal = $("#videoModal");
   const watch = $("#watchDemo");

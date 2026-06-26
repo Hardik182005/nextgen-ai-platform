@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="color-scheme" content="dark" />
-  <meta name="theme-color" content="#172B36" />
+  <meta name="color-scheme" content="light" />
+  <meta name="theme-color" content="#F1F6F4" />
 
   <title>Quanta — Autonomous AI Data Automation Platform</title>
   <meta name="description" content="Quanta is the next-gen AI platform that deploys autonomous agents to automate complex data workflows. Matrix-driven pricing, real-time telemetry, and enterprise-grade orchestration — built for scale." />
@@ -155,26 +155,65 @@
           </div>
         </div>
 
-        <!-- From-scratch CSS 3D code panel (no library) -->
-        <div class="hero__stage" data-reveal aria-hidden="true">
-          <div class="codepanel" id="codePanel">
-            <div class="codepanel__bar">
-              <span class="codepanel__dots"><i></i><i></i><i></i></span>
-              <span class="codepanel__file">agent.config.ts</span>
+        <!-- From-scratch animated 3D pipeline (no library) -->
+        <div class="hero__stage" data-reveal>
+          <div class="pipeline" id="pipeline" aria-label="Live data pipeline visualization">
+            <div class="pipeline__head">
+              <span class="tag tag--live"><span class="dot"></span> Live pipeline</span>
+              <span class="tag tag--synth"><span class="dot dot--amber"></span> Synthetic data</span>
             </div>
-            <div class="codepanel__code">
-              <div class="cl"><span class="n">01</span><span><span class="k">export const</span> <span class="v">agent</span> = {</span></div>
-              <div class="cl"><span class="n">02</span><span>  <span class="p">source</span>: <span class="s">"events.stream"</span>,</span></div>
-              <div class="cl"><span class="n">03</span><span>  <span class="p">ingest</span>: <span class="f">fields</span>(<span class="num">24</span>),</span></div>
-              <div class="cl"><span class="n">04</span><span>  <span class="p">transform</span>: [<span class="s">"align"</span>, <span class="s">"dedupe"</span>],</span></div>
-              <div class="cl"><span class="n">05</span><span>  <span class="p">route</span>: <span class="f">edge</span>(<span class="s">"asia-south1"</span>),</span></div>
-              <div class="cl"><span class="n">06</span><span>  <span class="p">batchSize</span>: <span class="num">500</span>,</span></div>
-              <div class="cl"><span class="n">07</span><span>  <span class="p">autoHeal</span>: <span class="k">true</span>,</span></div>
-              <div class="cl"><span class="n">08</span><span>}</span></div>
-            </div>
-            <div class="codepanel__foot">
-              <span class="codepanel__pulse"></span> Live throughput <b>1.2M results</b>
-            </div>
+
+            <ol class="pipeline__steps" role="list">
+              <li class="pstep" data-step="0">
+                <span class="pstep__node"><span class="icon icon--chart" aria-hidden="true"></span></span>
+                <div class="pstep__body">
+                  <h3>Ingest evidence</h3>
+                  <p>Worker-authorised · 5 source families</p>
+                  <div class="chips">
+                    <span class="chip"><span class="icon icon--cube" aria-hidden="true"></span> Platform docs</span>
+                    <span class="chip"><span class="icon icon--link" aria-hidden="true"></span> Bank payouts</span>
+                    <span class="chip"><span class="icon icon--search" aria-hidden="true"></span> Live capture</span>
+                    <span class="chip"><span class="icon icon--cog" aria-hidden="true"></span> Skill certs</span>
+                  </div>
+                </div>
+              </li>
+
+              <li class="pstep" data-step="1">
+                <span class="pstep__node"><span class="icon icon--arrow-path" aria-hidden="true"></span></span>
+                <div class="pstep__body">
+                  <h3>Corroboration engine</h3>
+                  <p>Cross-checked · contradictions flagged</p>
+                  <div class="chips">
+                    <span class="chip chip--ok"><span class="icon icon--cube" aria-hidden="true"></span> Manipulation risk · Low</span>
+                    <span class="chip"><span class="icon icon--chart" aria-hidden="true"></span> Confidence · High</span>
+                  </div>
+                </div>
+              </li>
+
+              <li class="pstep" data-step="2">
+                <span class="pstep__node pstep__node--solid"><span class="icon icon--trending" aria-hidden="true"></span></span>
+                <div class="pstep__body">
+                  <h3>Evidence Strength Index</h3>
+                  <p>Transparent, auditable scoring</p>
+                  <div class="meter">
+                    <div class="meter__row"><span>ESI · Verified</span><b><span data-countup="86">0</span><i>/100</i></b></div>
+                    <div class="meter__track"><span class="meter__fill" style="--p:86%"></span></div>
+                  </div>
+                </div>
+              </li>
+
+              <li class="pstep" data-step="3">
+                <span class="pstep__node"><span class="icon icon--link-solid" aria-hidden="true"></span></span>
+                <div class="pstep__body">
+                  <h3>Credential decision</h3>
+                  <p>Issue · note · withhold</p>
+                  <div class="chips">
+                    <span class="chip chip--solid">Issue credential</span>
+                    <span class="chip chip--warn"><span class="icon icon--arrow-path" aria-hidden="true"></span> Issue with note</span>
+                  </div>
+                </div>
+              </li>
+            </ol>
           </div>
         </div>
       </div>
