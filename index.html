@@ -415,24 +415,17 @@
 
         <!-- Performance-isolated controls -->
         <div class="pricing__controls" role="group" aria-label="Pricing options">
-          <div class="billing-toggle" id="billingToggle" data-cycle="monthly">
-            <button class="billing-toggle__opt is-active" type="button" data-cycle="monthly" aria-pressed="true">Monthly</button>
-            <button class="billing-toggle__opt" type="button" data-cycle="annual" aria-pressed="false">
-              Annual <span class="save-badge">Save 20%</span>
-            </button>
-            <span class="billing-toggle__knob" aria-hidden="true"></span>
+          <div class="seg" id="billingToggle" data-cycle="monthly" style="--n:2;--i:0" role="group" aria-label="Billing cycle">
+            <button class="seg__opt is-active" type="button" data-cycle="monthly" aria-pressed="true">Monthly</button>
+            <button class="seg__opt" type="button" data-cycle="annual" aria-pressed="false">Annual <span class="save-badge">Save 20%</span></button>
+            <span class="seg__knob" aria-hidden="true"></span>
           </div>
 
-          <div class="currency-select" id="currencySelect">
-            <button class="currency-select__btn" type="button" aria-haspopup="listbox" aria-expanded="false" id="currencyBtn">
-              <span class="currency-select__cur" data-cur-label>₹ INR</span>
-              <span class="icon icon--chevron-down" aria-hidden="true"></span>
-            </button>
-            <ul class="currency-select__menu" role="listbox" aria-label="Currency" id="currencyMenu" hidden>
-              <li role="option" data-cur="INR" aria-selected="true">₹ INR — Indian Rupee</li>
-              <li role="option" data-cur="USD" aria-selected="false">$ USD — US Dollar</li>
-              <li role="option" data-cur="EUR" aria-selected="false">€ EUR — Euro</li>
-            </ul>
+          <div class="seg seg--cur" id="currencySeg" data-cur="INR" style="--n:3;--i:1" role="group" aria-label="Currency">
+            <button class="seg__opt" type="button" data-cur="USD" aria-pressed="false">$ USD</button>
+            <button class="seg__opt is-active" type="button" data-cur="INR" aria-pressed="true">₹ INR</button>
+            <button class="seg__opt" type="button" data-cur="EUR" aria-pressed="false">€ EUR</button>
+            <span class="seg__knob" aria-hidden="true"></span>
           </div>
         </div>
 

@@ -54,7 +54,6 @@
     noteNodes[n.getAttribute("data-price-note")] = n;
   });
   const symbolNodes = Array.from(section.querySelectorAll("[data-price-symbol]"));
-  const labelNode = section.querySelector("[data-cur-label]");
 
   /* ---- Single source of truth for the switcher ---- */
   let state = { currency: "INR", cycle: "monthly" };
@@ -85,58 +84,42 @@
     });
 
     symbolNodes.forEach((n) => { n.textContent = sym; });
-    if (labelNode) labelNode.textContent = sym + " " + currency;
+  }
+
+  /* ---- Segmented control helper: slide knob, isolate updates ---- */
+  function wireSegment(el, attr, onPick) {
+    const opts = Array.from(el.querySelectorAll(".seg__opt"));
+    el.addEventListener("click", (e) => {
+      const opt = e.target.closest(".seg__opt");
+      if (!opt) return;
+      const value = opt.getAttribute(attr);
+      const i = opts.indexOf(opt);
+      el.style.setProperty("--i", i);          // slide the knob to this segment
+      opts.forEach((b) => {
+        const on = b === opt;
+        b.classList.toggle("is-active", on);
+        b.setAttribute("aria-pressed", on ? "true" : "false");
+      });
+      onPick(value);
+    });
   }
 
   /* ---- Billing toggle (local, isolated) ---- */
   const toggle = document.getElementById("billingToggle");
-  toggle.addEventListener("click", (e) => {
-    const opt = e.target.closest(".billing-toggle__opt");
-    if (!opt) return;
-    const cycle = opt.getAttribute("data-cycle");
+  wireSegment(toggle, "data-cycle", (cycle) => {
     if (cycle === state.cycle) return;
-
     state.cycle = cycle;
     toggle.setAttribute("data-cycle", cycle);
-    toggle.querySelectorAll(".billing-toggle__opt").forEach((b) => {
-      const on = b === opt;
-      b.classList.toggle("is-active", on);
-      b.setAttribute("aria-pressed", on ? "true" : "false");
-    });
     render();
   });
 
-  /* ---- Currency dropdown (performance-isolated component) ---- */
-  const select = document.getElementById("currencySelect");
-  const curBtn = document.getElementById("currencyBtn");
-  const curMenu = document.getElementById("currencyMenu");
-
-  function openMenu(open) {
-    select.setAttribute("data-open", open ? "true" : "false");
-    curBtn.setAttribute("aria-expanded", open ? "true" : "false");
-    curMenu.hidden = !open;
-  }
-  curBtn.addEventListener("click", () =>
-    openMenu(select.getAttribute("data-open") !== "true")
-  );
-  curMenu.addEventListener("click", (e) => {
-    const opt = e.target.closest("[data-cur]");
-    if (!opt) return;
-    const currency = opt.getAttribute("data-cur");
-    curMenu.querySelectorAll("[role=option]").forEach((o) =>
-      o.setAttribute("aria-selected", o === opt ? "true" : "false")
-    );
-    openMenu(false);
-    if (currency !== state.currency) {
-      state.currency = currency;
-      render();
-    }
-  });
-  document.addEventListener("click", (e) => {
-    if (!select.contains(e.target)) openMenu(false);
-  });
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") openMenu(false);
+  /* ---- Currency segmented control (performance-isolated) ---- */
+  const curSeg = document.getElementById("currencySeg");
+  wireSegment(curSeg, "data-cur", (currency) => {
+    if (currency === state.currency) return;
+    state.currency = currency;
+    curSeg.setAttribute("data-cur", currency);
+    render();
   });
 
   /* ---- First paint: values come from the matrix, not the markup ---- */

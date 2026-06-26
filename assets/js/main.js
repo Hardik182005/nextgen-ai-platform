@@ -82,8 +82,8 @@
   });
 
   /* ---------- 3D scroll reveal for lower-section cards ---------- */
-  const groups = [".bento", ".plans", ".gauges", ".testi__track"];
-  const cardSel = ".bento__node, .plan, .gauge, .testi__card";
+  const groups = [".bento", ".plans", ".gauges"];
+  const cardSel = ".bento__node, .plan, .gauge";
   $$(cardSel).forEach((el) => el.classList.add("r3d"));
   const r3dObs = "IntersectionObserver" in window
     ? new IntersectionObserver((entries) => {
@@ -220,12 +220,46 @@
     });
   }
 
-  /* ---------- Testimonials carousel ---------- */
+  /* ---------- Testimonials: auto-scrolling marquee cards ---------- */
   const track = $("#testiTrack");
   if (track) {
-    const step = () => (track.querySelector(".testi__card") || {}).offsetWidth + 19;
-    $("#testiNext") && $("#testiNext").addEventListener("click", () => track.scrollBy({ left: step(), behavior: "smooth" }));
-    $("#testiPrev") && $("#testiPrev").addEventListener("click", () => track.scrollBy({ left: -step(), behavior: "smooth" }));
+    // Duplicate the cards for a seamless loop (clones are non-animated copies).
+    Array.from(track.children).forEach((c) => {
+      const clone = c.cloneNode(true);
+      clone.classList.remove("r3d", "in3d");
+      clone.setAttribute("aria-hidden", "true");
+      track.appendChild(clone);
+    });
+
+    let paused = false, offscreen = false, raf;
+    const SPEED = 0.45; // px/frame
+    function loop() {
+      if (!paused && !offscreen) {
+        track.scrollLeft += SPEED;
+        const half = track.scrollWidth / 2;
+        if (track.scrollLeft >= half) track.scrollLeft -= half;
+      }
+      raf = requestAnimationFrame(loop);
+    }
+    if (!reduceMotion) requestAnimationFrame(loop);
+
+    track.addEventListener("mouseenter", () => (paused = true));
+    track.addEventListener("mouseleave", () => (paused = false));
+    track.addEventListener("focusin", () => (paused = true));
+    track.addEventListener("focusout", () => (paused = false));
+
+    const step = () => ((track.querySelector(".testi__card") || {}).offsetWidth || 320) + 20;
+    const nudge = (dir) => {
+      paused = true;
+      track.scrollBy({ left: dir * step(), behavior: reduceMotion ? "auto" : "smooth" });
+      clearTimeout(track._t); track._t = setTimeout(() => (paused = false), 1400);
+    };
+    $("#testiNext") && $("#testiNext").addEventListener("click", () => nudge(1));
+    $("#testiPrev") && $("#testiPrev").addEventListener("click", () => nudge(-1));
+
+    if ("IntersectionObserver" in window) {
+      new IntersectionObserver((es) => es.forEach((e) => (offscreen = !e.isIntersecting)), { threshold: 0 }).observe(track);
+    }
   }
 
   /* ---------- FAQ accordion (from scratch, grid-rows transition) ---------- */
