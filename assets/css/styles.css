@@ -417,8 +417,8 @@ section { padding-block: clamp(3.5rem, 8vw, 7rem); position: relative; }
 .seg__knob { position: absolute; z-index: 0; top: 5px; bottom: 5px; left: 5px;
   width: calc((100% - 10px) / var(--n, 2)); background: var(--forsythia); border-radius: 999px;
   transform: translateX(calc(var(--i, 0) * 100%)); transition: transform var(--t-micro) var(--ease-out); }
-.save-badge { font-size: .62rem; padding: .12rem .4rem; border-radius: 6px; background: var(--saffron); color: var(--noir); font-weight: 700; }
-.seg__opt.is-active .save-badge { background: var(--noir); color: var(--forsythia); }
+.save-pill { display: inline-flex; align-items: center; font-family: var(--font-mono); font-size: .68rem; letter-spacing: .04em; font-weight: 700;
+  padding: .4rem .75rem; border-radius: 999px; background: rgba(255,153,50,.16); color: var(--noir); border: 1px solid var(--saffron); white-space: nowrap; }
 
 .plans { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; align-items: stretch; }
 .plan { display: flex; flex-direction: column; gap: .6rem; padding: 1.8rem 1.6rem; border: 1px solid var(--border); border-radius: var(--radius);
