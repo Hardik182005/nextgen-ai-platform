@@ -4,7 +4,7 @@ A premium, high-converting, fully responsive landing page for an AI-driven data
 automation platform. Built **from scratch** with semantic HTML, custom CSS, and
 vanilla JavaScript — **no UI or animation libraries**.
 
-**Live demo:** https://mediflow-nexus-2026.vercel.app
+**Live demo:** https://quanta-ai.web.app
 
 ---
 

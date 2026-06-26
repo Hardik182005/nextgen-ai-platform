@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "site": "mediflow-nexus-2026",
+    "site": "quanta-ai",
     "public": ".",
     "cleanUrls": true,
     "trailingSlash": false,

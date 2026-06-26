@@ -5,8 +5,8 @@
   "targets": {
     "mediflow-nexus-2026": {
       "hosting": {
-        "mediflow-nexus-2026": [
-          "mediflow-nexus-2026"
+        "quanta-ai": [
+          "quanta-ai"
         ]
       }
     }
