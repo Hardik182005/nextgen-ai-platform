@@ -8,7 +8,7 @@ A premium, high-converting, fully-responsive landing page for an AI-driven data 
 
 <br/>
 
-[![Live Demo](https://img.shields.io/badge/▶_LIVE_DEMO-quanta--ai.web.app-FFC801?style=for-the-badge&labelColor=172B36)](https://quanta-ai.web.app)
+[![Live Demo](https://img.shields.io/badge/▶_LIVE_DEMO-quanta--ai--6e963.web.app-FFC801?style=for-the-badge&labelColor=172B36)](https://quanta-ai-6e963.web.app)
 &nbsp;
 [![Repo](https://img.shields.io/badge/SOURCE-GitHub-114C5A?style=for-the-badge&logo=github&logoColor=white&labelColor=172B36)](https://github.com/Hardik182005/nextgen-ai-platform)
 
@@ -127,7 +127,7 @@ npm run dev          # serves http://localhost:5173
 Static site — deploy anywhere (Firebase / Vercel / Netlify / GitHub Pages). No build step.
 
 ```bash
-firebase deploy --only hosting:quanta-ai --project mediflow-nexus-2026
+firebase deploy --only hosting:quanta-ai-6e963 --project mediflow-nexus-2026
 ```
 
 ---

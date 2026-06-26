@@ -309,6 +309,7 @@
         modal.hidden = false;
         requestAnimationFrame(() => modal.setAttribute("data-open", "true"));
         document.body.style.overflow = "hidden";
+        if (video) { try { video.currentTime = 0; video.play(); } catch (_) {} }
       } else {
         modal.setAttribute("data-open", "false");
         if (video) { video.pause(); }

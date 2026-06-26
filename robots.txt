@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://quanta-ai.web.app/sitemap.xml
+Sitemap: https://quanta-ai-6e963.web.app/sitemap.xml
