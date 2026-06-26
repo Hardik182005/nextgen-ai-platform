@@ -76,6 +76,7 @@
   </div>
 
   <a class="skip-link" href="#main">Skip to content</a>
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
   <!-- ===== Header ===== -->
   <header class="site-header" id="top">
@@ -197,8 +198,8 @@
                   <h3>Evidence Strength Index</h3>
                   <p>Transparent, auditable scoring</p>
                   <div class="meter">
-                    <div class="meter__row"><span>ESI · Verified</span><b><span data-countup="86">0</span><i>/100</i></b></div>
-                    <div class="meter__track"><span class="meter__fill" style="--p:86%"></span></div>
+                    <div class="meter__row"><span>ESI · Verified</span><b><span data-countup="86" id="esiScore">0</span><i>/100</i></b></div>
+                    <div class="meter__track"><span class="meter__fill" id="esiFill" style="--p:86%"></span></div>
                   </div>
                 </div>
               </li>

@@ -70,6 +70,10 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
 
 .container { width: 100%; max-width: var(--maxw); margin-inline: auto; padding-inline: var(--pad); }
 
+.scroll-progress { position: fixed; top: 0; left: 0; height: 3px; width: 0; z-index: 120;
+  background: linear-gradient(90deg, var(--ok), var(--teal), var(--saffron)); border-radius: 0 3px 3px 0;
+  box-shadow: 0 0 12px rgba(31,156,99,.5); transition: width 80ms linear; }
+
 .skip-link {
   position: fixed; top: -60px; left: 12px; z-index: 200;
   background: var(--forsythia); color: var(--noir); font-weight: 700;
@@ -242,10 +246,11 @@ section { padding-block: clamp(3.5rem, 8vw, 7rem); position: relative; }
 /* From-scratch animated 3D pipeline */
 .hero__stage { perspective: 1700px; display: flex; justify-content: center; }
 .pipeline { width: min(460px, 100%); background: var(--surface); border: 1px solid var(--border);
-  border-radius: 22px; padding: 1.3rem 1.4rem 1.6rem; transform: rotateY(-7deg) rotateX(2.5deg); transform-style: preserve-3d;
+  border-radius: 22px; padding: 1.3rem 1.4rem 1.6rem; transform-style: preserve-3d;
+  transform: rotateY(var(--ry, -7deg)) rotateX(var(--rx, 2.5deg));
   box-shadow: 0 50px 90px -40px rgba(17,76,90,.45), 0 8px 30px -16px rgba(17,76,90,.25), inset 0 1px 0 #fff;
-  transition: transform var(--t-reflow) var(--ease-inout); }
-.pipeline:hover { transform: rotateY(-2deg) rotateX(1deg); }
+  transition: transform 220ms var(--ease-out); will-change: transform; }
+.pipeline.is-tilting { transition: transform 90ms linear; }
 .pipeline__head { display: flex; justify-content: space-between; gap: .6rem; margin-bottom: 1.3rem; }
 .tag { display: inline-flex; align-items: center; gap: .45rem; font-family: var(--font-mono); font-size: .66rem; letter-spacing: .12em;
   text-transform: uppercase; padding: .38rem .7rem; border-radius: 999px; border: 1px solid var(--border); color: var(--text-muted); background: var(--surface-2); }

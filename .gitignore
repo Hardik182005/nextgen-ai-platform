@@ -7,9 +7,11 @@ Thumbs.db
 _assets_svgs/
 _assets_drive/
 _frames/
+_ref/
 *.zip
 FB_Round_1.pdf
-image.png
+/image*.png
+/20260626-*.mp4
 
 # Node (not used at runtime, but keep clean)
 node_modules/
