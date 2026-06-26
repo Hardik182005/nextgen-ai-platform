@@ -1,0 +1,33 @@
+{
+  "hosting": {
+    "site": "mediflow-nexus-2026",
+    "public": ".",
+    "cleanUrls": true,
+    "trailingSlash": false,
+    "ignore": [
+      "firebase.json",
+      ".firebaserc",
+      "**/.*",
+      "**/node_modules/**",
+      "_assets_svgs/**",
+      "_assets_drive/**",
+      "_frames/**",
+      "*.zip",
+      "*.pdf",
+      "image.png",
+      "vercel.json",
+      "package.json",
+      "README.md"
+    ],
+    "headers": [
+      {
+        "source": "/assets/fonts/**",
+        "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
+      },
+      {
+        "source": "/assets/**",
+        "headers": [{ "key": "Cache-Control", "value": "public, max-age=86400" }]
+      }
+    ]
+  }
+}
