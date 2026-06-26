@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mediflow-nexus-2026.vercel.app/sitemap.xml
