@@ -27,6 +27,10 @@ A premium, high-converting, fully-responsive landing page for an AI-driven data 
 ![TTI](https://img.shields.io/badge/entry_orchestration-%E2%89%A4_500ms-FF9932?style=flat-square)
 ![License](https://img.shields.io/badge/license-MIT-172B36?style=flat-square)
 
+<br/>
+
+<img src="docs/preview-hero.png" alt="Quanta hero — animated live pipeline" width="92%"/>
+
 </div>
 
 ---
@@ -82,9 +86,19 @@ The two core features have hard architectural constraints — **strict state iso
 | **Fonts** | JetBrains Mono (display/code) + Inter (body) — self-hosted `woff2`, 8 weights |
 | **Palette (MP025)** | Arctic Powder `#F1F6F4` · Forsythia `#FFC801` · Nocturnal Expedition `#114C5A` · Mystic Mint `#D9E8E2` · Deep Saffron `#FF9932` · Oceanic Noir `#172B36` |
 | **SVGs** | All **14** icons, recolored via CSS masks |
-| **demo.mp4** | Embedded in the in-page video modal |
+| **demo.mp4** | Motion reference — replicated; an in-page **website tour** plays in the "Explore the platform" modal |
 
 > 🔒 **No external resources** — fonts, icons and video are all self-hosted.
+
+---
+
+## 🖼️ Preview
+
+<div align="center">
+<img src="docs/preview-full.png" alt="Quanta — full landing page" width="58%"/>
+&nbsp;&nbsp;
+<img src="docs/preview-mobile.png" alt="Quanta — mobile layout" width="22%"/>
+</div>
 
 ---
 
