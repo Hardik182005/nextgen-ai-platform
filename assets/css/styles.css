@@ -28,7 +28,7 @@
   --text-faint: rgba(23, 43, 54, 0.44);
   --accent: var(--teal);
   --accent-2: var(--saffron);
-  --ok: #1f9c63; /* verified/live accent derived for status states */
+  --ok: var(--teal); /* "verified/live" status — mapped to Nocturnal teal (palette-pure) */
 
   /* type */
   --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
@@ -72,7 +72,7 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
 
 .scroll-progress { position: fixed; top: 0; left: 0; height: 3px; width: 0; z-index: 120;
   background: linear-gradient(90deg, var(--ok), var(--teal), var(--saffron)); border-radius: 0 3px 3px 0;
-  box-shadow: 0 0 12px rgba(31,156,99,.5); transition: width 80ms linear; }
+  box-shadow: 0 0 12px rgba(17,76,90,.5); transition: width 80ms linear; }
 
 .skip-link {
   position: fixed; top: -60px; left: 12px; z-index: 200;
@@ -224,7 +224,7 @@ section { padding-block: clamp(3.5rem, 8vw, 7rem); position: relative; }
     radial-gradient(70% 60% at 85% 12%, rgba(255,200,1,.14), transparent 60%),
     radial-gradient(60% 70% at 95% 80%, rgba(255,153,50,.10), transparent 62%),
     radial-gradient(90% 90% at 10% 0%, #ffffff, transparent 55%),
-    linear-gradient(160deg, #eaf3ef 0%, var(--powder) 45%, var(--mint) 100%); }
+    linear-gradient(160deg, #ffffff 0%, var(--powder) 45%, var(--mint) 100%); }
 .hero__glow { position: absolute; inset: 0; z-index: 0; pointer-events: none;
   background:
     linear-gradient(transparent 0, transparent calc(100% - 1px), rgba(17,76,90,.05) 100%),
@@ -254,17 +254,17 @@ section { padding-block: clamp(3.5rem, 8vw, 7rem); position: relative; }
 .pipeline__head { display: flex; justify-content: space-between; gap: .6rem; margin-bottom: 1.3rem; }
 .tag { display: inline-flex; align-items: center; gap: .45rem; font-family: var(--font-mono); font-size: .66rem; letter-spacing: .12em;
   text-transform: uppercase; padding: .38rem .7rem; border-radius: 999px; border: 1px solid var(--border); color: var(--text-muted); background: var(--surface-2); }
-.tag .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--ok); box-shadow: 0 0 0 3px rgba(31,156,99,.16); }
+.tag .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--ok); box-shadow: 0 0 0 3px rgba(17,76,90,.16); }
 .tag .dot--amber { background: var(--saffron); box-shadow: 0 0 0 3px rgba(255,153,50,.16); }
 
 .pipeline__steps { position: relative; display: grid; gap: 1.15rem; }
 .pipeline__steps::before { content: ""; position: absolute; left: 26px; top: 26px; bottom: 26px; width: 2px;
   background: var(--border); border-radius: 2px; }
 .pipeline__steps::after { content: ""; position: absolute; left: 26px; top: 26px; width: 2px; height: var(--fill, 0%);
-  background: linear-gradient(var(--ok), var(--teal)); border-radius: 2px; transition: height 600ms var(--ease-inout); box-shadow: 0 0 10px rgba(31,156,99,.4); }
+  background: linear-gradient(var(--ok), var(--teal)); border-radius: 2px; transition: height 600ms var(--ease-inout); box-shadow: 0 0 10px rgba(17,76,90,.4); }
 .pipeline__scan { position: absolute; left: 27px; top: 26px; transform: translate(-50%, -50%); z-index: 2;
   width: 12px; height: 12px; border-radius: 50%; background: var(--ok); opacity: 0;
-  box-shadow: 0 0 0 4px rgba(31,156,99,.16), 0 0 18px 4px rgba(31,156,99,.55); animation: scan 3.4s var(--ease-inout) infinite; }
+  box-shadow: 0 0 0 4px rgba(17,76,90,.16), 0 0 18px 4px rgba(17,76,90,.55); animation: scan 3.4s var(--ease-inout) infinite; }
 @keyframes scan { 0% { top: 26px; opacity: 0; } 12% { opacity: 1; } 84% { top: calc(100% - 26px); opacity: 1; } 100% { top: calc(100% - 26px); opacity: 0; } }
 @media (prefers-reduced-motion: reduce) { .pipeline__scan { display: none; } }
 
@@ -275,7 +275,7 @@ section { padding-block: clamp(3.5rem, 8vw, 7rem); position: relative; }
 .pstep__node--solid { background: var(--noir); border-color: var(--noir); color: var(--forsythia); }
 .pstep__body h3 { font-family: var(--font-mono); font-size: 1.02rem; margin-bottom: .15rem; transition: color var(--t-micro) var(--ease-out); }
 .pstep__body p { font-family: var(--font-mono); font-size: .72rem; letter-spacing: .04em; text-transform: uppercase; color: var(--text-faint); }
-.pstep.is-on .pstep__node { border-color: var(--ok); color: var(--ok); box-shadow: 0 0 0 4px rgba(31,156,99,.12); transform: translateZ(20px); }
+.pstep.is-on .pstep__node { border-color: var(--ok); color: var(--ok); box-shadow: 0 0 0 4px rgba(17,76,90,.12); transform: translateZ(20px); }
 .pstep.is-on .pstep__node--solid { color: var(--forsythia); box-shadow: 0 0 0 4px rgba(17,76,90,.16); }
 .pstep.is-on .pstep__body h3 { color: var(--accent); }
 
@@ -283,10 +283,10 @@ section { padding-block: clamp(3.5rem, 8vw, 7rem); position: relative; }
 .chip { display: inline-flex; align-items: center; gap: .35rem; font-size: .72rem; padding: .34rem .6rem; border-radius: 9px;
   border: 1px solid var(--border); background: var(--surface); color: var(--text-muted); }
 .chip .icon { font-size: .85rem; color: var(--text-faint); }
-.chip--ok { color: var(--ok); border-color: rgba(31,156,99,.35); background: rgba(31,156,99,.06); }
+.chip--ok { color: var(--ok); border-color: rgba(17,76,90,.35); background: rgba(17,76,90,.06); }
 .chip--ok .icon { color: var(--ok); }
 .chip--solid { background: var(--noir); color: var(--powder); border-color: var(--noir); }
-.chip--warn { color: #9a6b00; border-color: rgba(255,200,1,.6); background: rgba(255,200,1,.12); }
+.chip--warn { color: var(--noir); border-color: rgba(255,200,1,.6); background: rgba(255,200,1,.12); }
 .chip--warn .icon { color: var(--saffron); }
 
 .meter { margin-top: .8rem; }
@@ -311,7 +311,7 @@ section { padding-block: clamp(3.5rem, 8vw, 7rem); position: relative; }
   font-family: var(--font-mono); font-size: .82rem; letter-spacing: .02em; }
 .ticker .t-name { color: rgba(241,246,244,.5); text-transform: uppercase; font-size: .7rem; letter-spacing: .12em; }
 .ticker li b { color: var(--powder); font-weight: 700; }
-.ticker .up { color: var(--ok); font-size: .9rem; }
+.ticker .up { color: var(--forsythia); font-size: .9rem; }
 .ticker .down { color: var(--saffron); font-size: .9rem; }
 @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 @media (prefers-reduced-motion: reduce) { .ticker__track { animation: none; } }

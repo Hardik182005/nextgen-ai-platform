@@ -17,19 +17,15 @@ A premium, high-converting, fully-responsive landing page for an AI-driven data 
 ![HTML5](https://img.shields.io/badge/HTML5-Semantic-FF9932?style=flat-square&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-Custom_Properties-114C5A?style=flat-square&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-Vanilla_ES2020-FFC801?style=flat-square&logo=javascript&logoColor=172B36)
-![No Dependencies](https://img.shields.io/badge/dependencies-0-1f9c63?style=flat-square)
+![No Dependencies](https://img.shields.io/badge/dependencies-0-114C5A?style=flat-square)
 ![Firebase Hosting](https://img.shields.io/badge/Firebase-Hosting-FF9932?style=flat-square&logo=firebase&logoColor=white)
 
 ![No Frameworks](https://img.shields.io/badge/frameworks-none-114C5A?style=flat-square)
 ![Motion](https://img.shields.io/badge/motion-native_CSS_%2F_WAAPI-FFC801?style=flat-square&logoColor=172B36)
-![A11y](https://img.shields.io/badge/accessibility-WCAG_AA-1f9c63?style=flat-square)
+![A11y](https://img.shields.io/badge/accessibility-WCAG_AA-114C5A?style=flat-square)
 ![Responsive](https://img.shields.io/badge/responsive-mobile_%7C_tablet_%7C_desktop-114C5A?style=flat-square)
-![TTI](https://img.shields.io/badge/entry_orchestration-%E2%89%A4_500ms-1f9c63?style=flat-square)
+![TTI](https://img.shields.io/badge/entry_orchestration-%E2%89%A4_500ms-FF9932?style=flat-square)
 ![License](https://img.shields.io/badge/license-MIT-172B36?style=flat-square)
-
-<br/>
-
-<img src="docs/preview-hero.png" alt="Quanta hero — animated live pipeline" width="92%"/>
 
 </div>
 
@@ -89,16 +85,6 @@ The two core features have hard architectural constraints — **strict state iso
 | **demo.mp4** | Embedded in the in-page video modal |
 
 > 🔒 **No external resources** — fonts, icons and video are all self-hosted.
-
----
-
-## 🖼️ Preview
-
-<div align="center">
-<img src="docs/preview-full.png" alt="Quanta full page" width="60%"/>
-&nbsp;&nbsp;
-<img src="docs/preview-mobile.png" alt="Quanta mobile" width="22%"/>
-</div>
 
 ---
 
