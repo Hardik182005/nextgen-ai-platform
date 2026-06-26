@@ -184,17 +184,6 @@
     });
   });
 
-  /* ---------- Rotator words ---------- */
-  const rotItems = $$(".rotator__item");
-  if (rotItems.length && !reduceMotion) {
-    let ri = 0;
-    setInterval(() => {
-      rotItems[ri].classList.remove("is-active");
-      ri = (ri + 1) % rotItems.length;
-      rotItems[ri].classList.add("is-active");
-    }, 2400);
-  }
-
   /* ---------- Video modal ---------- */
   const modal = $("#videoModal");
   const watch = $("#watchDemo");
@@ -224,49 +213,4 @@
   $("#toTop") && $("#toTop").addEventListener("click", () =>
     window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" }));
   const yr = $("#year"); if (yr) yr.textContent = new Date().getFullYear();
-
-  /* ---------- Hero node grid (lightweight isometric canvas) ---------- */
-  const canvas = $("#heroGrid");
-  if (canvas && !reduceMotion) {
-    const ctx = canvas.getContext("2d");
-    let w, h, dpr, raf, t = 0, running = true;
-    const SP = 46; // spacing
-    function resize() {
-      dpr = Math.min(window.devicePixelRatio || 1, 2);
-      w = canvas.clientWidth; h = canvas.clientHeight;
-      canvas.width = w * dpr; canvas.height = h * dpr;
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    }
-    function draw() {
-      if (!running) return;
-      t += 0.012;
-      ctx.clearRect(0, 0, w, h);
-      const cols = Math.ceil(w / SP) + 1, rows = Math.ceil(h / SP) + 1;
-      for (let y = 0; y < rows; y++) {
-        for (let x = 0; x < cols; x++) {
-          const px = x * SP, py = y * SP;
-          const d = Math.sin(x * 0.5 + t) + Math.cos(y * 0.5 + t * 0.8);
-          const a = 0.05 + (d + 2) * 0.05;
-          const r = 1 + (d + 2) * 0.7;
-          ctx.beginPath();
-          ctx.arc(px, py, r, 0, Math.PI * 2);
-          // forsythia-tinted nodes on a faint mint grid
-          ctx.fillStyle = d > 1.4 ? "rgba(255,200,1," + a + ")" : "rgba(217,232,226," + (a * 0.5) + ")";
-          ctx.fill();
-        }
-      }
-      raf = requestAnimationFrame(draw);
-    }
-    resize(); draw();
-    window.addEventListener("resize", resize);
-    // Pause when offscreen to save cycles.
-    if ("IntersectionObserver" in window) {
-      new IntersectionObserver((es) => {
-        es.forEach((e) => {
-          running = e.isIntersecting;
-          if (running) { cancelAnimationFrame(raf); draw(); }
-        });
-      }, { threshold: 0 }).observe(canvas);
-    }
-  }
 })();

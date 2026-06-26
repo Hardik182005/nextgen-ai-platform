@@ -124,37 +124,58 @@
   <main id="main">
     <!-- ===== Hero ===== -->
     <section class="hero" aria-labelledby="hero-title">
-      <canvas class="hero__grid" id="heroGrid" aria-hidden="true"></canvas>
       <div class="hero__glow" aria-hidden="true"></div>
       <div class="container hero__inner">
-        <p class="eyebrow reveal" data-reveal>
-          <span class="icon icon--cube" aria-hidden="true"></span>
-          Next-Gen AI Data Automation
-        </p>
-        <h1 class="hero__title" id="hero-title">
-          <span class="reveal-line"><span data-reveal>Data pipelines</span></span>
-          <span class="reveal-line"><span data-reveal>that build</span></span>
-          <span class="reveal-line"><span data-reveal class="hl">themselves.</span></span>
-        </h1>
-        <p class="hero__lede reveal" data-reveal>
-          Quanta unleashes autonomous agents that ingest, reason over, and orchestrate your
-          entire data stack — end to end, in real time. You ship intelligence; we delete the glue code.
-        </p>
-        <div class="hero__cta reveal" data-reveal>
-          <a class="btn btn--solid btn--lg" href="#pricing">
-            Build a workflow
-            <span class="icon icon--arrow-right" aria-hidden="true"></span>
-          </a>
-          <button class="btn btn--ghost btn--lg" id="watchDemo" type="button">
-            <span class="icon icon--play" aria-hidden="true"></span>
-            Watch the 2-min demo
-          </button>
+        <div class="hero__copy">
+          <p class="eyebrow" data-reveal>
+            <span class="icon icon--cube" aria-hidden="true"></span>
+            Autonomous Data Infrastructure
+          </p>
+          <h1 class="hero__title" id="hero-title" data-reveal>
+            Data pipelines<br />that <span class="hl">build</span><br /><span class="hl">themselves.</span>
+          </h1>
+          <p class="hero__lede" data-reveal>
+            Quanta ingests, transforms, and acts on your data in real time — replacing brittle
+            glue code with AI agents that self-optimize, self-heal, and scale on demand.
+          </p>
+          <div class="hero__cta" data-reveal>
+            <a class="btn btn--solid btn--lg" href="#pricing">
+              Start building free
+              <span class="icon icon--arrow-right" aria-hidden="true"></span>
+            </a>
+            <button class="btn btn--ghost btn--lg" id="watchDemo" type="button">
+              <span class="icon icon--play" aria-hidden="true"></span>
+              Explore the platform
+            </button>
+          </div>
+          <div class="hero__metrics" data-reveal>
+            <div class="metric"><b data-countup="99.99" data-suffix="%">0%</b><small>Pipeline uptime</small></div>
+            <div class="metric"><b data-countup="84" data-suffix="%">0%</b><small>Less latency</small></div>
+            <div class="metric"><b data-countup="12" data-suffix="M+">0</b><small>Agents deployed</small></div>
+          </div>
         </div>
 
-        <div class="hero__metrics reveal" data-reveal>
-          <div class="metric"><b data-countup="99.99" data-suffix="%">0%</b><small>Pipeline uptime</small></div>
-          <div class="metric"><b data-countup="84" data-suffix="%">0%</b><small>Less latency</small></div>
-          <div class="metric"><b data-countup="12" data-suffix="M+">0</b><small>Agents deployed</small></div>
+        <!-- From-scratch CSS 3D code panel (no library) -->
+        <div class="hero__stage" data-reveal aria-hidden="true">
+          <div class="codepanel" id="codePanel">
+            <div class="codepanel__bar">
+              <span class="codepanel__dots"><i></i><i></i><i></i></span>
+              <span class="codepanel__file">agent.config.ts</span>
+            </div>
+            <div class="codepanel__code">
+              <div class="cl"><span class="n">01</span><span><span class="k">export const</span> <span class="v">agent</span> = {</span></div>
+              <div class="cl"><span class="n">02</span><span>  <span class="p">source</span>: <span class="s">"events.stream"</span>,</span></div>
+              <div class="cl"><span class="n">03</span><span>  <span class="p">ingest</span>: <span class="f">fields</span>(<span class="num">24</span>),</span></div>
+              <div class="cl"><span class="n">04</span><span>  <span class="p">transform</span>: [<span class="s">"align"</span>, <span class="s">"dedupe"</span>],</span></div>
+              <div class="cl"><span class="n">05</span><span>  <span class="p">route</span>: <span class="f">edge</span>(<span class="s">"asia-south1"</span>),</span></div>
+              <div class="cl"><span class="n">06</span><span>  <span class="p">batchSize</span>: <span class="num">500</span>,</span></div>
+              <div class="cl"><span class="n">07</span><span>  <span class="p">autoHeal</span>: <span class="k">true</span>,</span></div>
+              <div class="cl"><span class="n">08</span><span>}</span></div>
+            </div>
+            <div class="codepanel__foot">
+              <span class="codepanel__pulse"></span> Live throughput <b>1.2M results</b>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -181,11 +202,7 @@
           <p class="kicker"><span class="icon icon--cog" aria-hidden="true"></span> Neural core</p>
           <h2 id="engines-title" class="balance">
             Connect your data to the world's most capable
-            <span class="rotator" aria-live="polite">
-              <span class="rotator__item is-active">reasoning models</span>
-              <span class="rotator__item">vector engines</span>
-              <span class="rotator__item">agent runtimes</span>
-            </span>
+            <span class="hl">reasoning models</span>
           </h2>
           <p class="section-sub">
             Low-latency, high-fidelity orchestration across every layer of your stack —
