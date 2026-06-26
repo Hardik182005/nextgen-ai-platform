@@ -57,6 +57,36 @@
     if (io) io.observe(el); else el.classList.add("in");
   });
 
+  /* ---------- Text reveal for lower-section headings (staggered) ---------- */
+  $$(".section-head").forEach((head) => {
+    Array.from(head.children).forEach((el, i) => {
+      el.setAttribute("data-reveal", "");
+      el.style.transitionDelay = i * 80 + "ms";
+      if (io) io.observe(el); else el.classList.add("in");
+    });
+  });
+
+  /* ---------- 3D scroll reveal for lower-section cards ---------- */
+  const groups = [".bento", ".plans", ".gauges", ".testi__track"];
+  const cardSel = ".bento__node, .plan, .gauge, .testi__card";
+  $$(cardSel).forEach((el) => el.classList.add("r3d"));
+  const r3dObs = "IntersectionObserver" in window
+    ? new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          if (!e.isIntersecting) return;
+          // stagger siblings within the same container
+          const siblings = Array.from(e.target.parentElement.children).filter((c) => c.classList.contains("r3d"));
+          const idx = Math.max(0, siblings.indexOf(e.target));
+          e.target.style.transitionDelay = Math.min(idx * 70, 350) + "ms";
+          e.target.classList.add("in3d");
+          r3dObs.unobserve(e.target);
+        });
+      }, { threshold: 0.2, rootMargin: "0px 0px -6% 0px" })
+    : null;
+  if (r3dObs) $$(cardSel).forEach((el) => r3dObs.observe(el));
+  else $$(cardSel).forEach((el) => el.classList.add("in3d"));
+  void groups; // grouping handled via parentElement above
+
   /* ---------- Count-up numbers ---------- */
   function countUp(el) {
     const target = parseFloat(el.getAttribute("data-countup"));
