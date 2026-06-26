@@ -161,7 +161,7 @@
           <div class="pipeline" id="pipeline" aria-label="Live data pipeline visualization">
             <div class="pipeline__head">
               <span class="tag tag--live"><span class="dot"></span> Live pipeline</span>
-              <span class="tag tag--synth"><span class="dot dot--amber"></span> Synthetic data</span>
+              <span class="tag tag--synth"><span class="dot dot--amber"></span> Real-time sync</span>
             </div>
 
             <ol class="pipeline__steps" role="list">
@@ -169,13 +169,13 @@
               <li class="pstep" data-step="0">
                 <span class="pstep__node"><span class="icon icon--chart" aria-hidden="true"></span></span>
                 <div class="pstep__body">
-                  <h3>Ingest evidence</h3>
-                  <p>Worker-authorised · 5 source families</p>
+                  <h3>Ingest data</h3>
+                  <p>Autonomous · 5 live connectors</p>
                   <div class="chips">
-                    <span class="chip"><span class="icon icon--cube" aria-hidden="true"></span> Platform docs</span>
-                    <span class="chip"><span class="icon icon--link" aria-hidden="true"></span> Bank payouts</span>
-                    <span class="chip"><span class="icon icon--search" aria-hidden="true"></span> Live capture</span>
-                    <span class="chip"><span class="icon icon--cog" aria-hidden="true"></span> Skill certs</span>
+                    <span class="chip"><span class="icon icon--link" aria-hidden="true"></span> REST &amp; GraphQL</span>
+                    <span class="chip"><span class="icon icon--cube" aria-hidden="true"></span> Databases</span>
+                    <span class="chip"><span class="icon icon--search" aria-hidden="true"></span> Event streams</span>
+                    <span class="chip"><span class="icon icon--cog" aria-hidden="true"></span> Batch files</span>
                   </div>
                 </div>
               </li>
@@ -183,10 +183,10 @@
               <li class="pstep" data-step="1">
                 <span class="pstep__node"><span class="icon icon--arrow-path" aria-hidden="true"></span></span>
                 <div class="pstep__body">
-                  <h3>Corroboration engine</h3>
-                  <p>Cross-checked · contradictions flagged</p>
+                  <h3>Agent reasoning</h3>
+                  <p>Cross-checked · anomalies flagged</p>
                   <div class="chips">
-                    <span class="chip chip--ok"><span class="icon icon--cube" aria-hidden="true"></span> Manipulation risk · Low</span>
+                    <span class="chip chip--ok"><span class="icon icon--cube" aria-hidden="true"></span> Drift risk · Low</span>
                     <span class="chip"><span class="icon icon--chart" aria-hidden="true"></span> Confidence · High</span>
                   </div>
                 </div>
@@ -195,10 +195,10 @@
               <li class="pstep" data-step="2">
                 <span class="pstep__node pstep__node--solid"><span class="icon icon--trending" aria-hidden="true"></span></span>
                 <div class="pstep__body">
-                  <h3>Evidence Strength Index</h3>
-                  <p>Transparent, auditable scoring</p>
+                  <h3>Pipeline Health Index</h3>
+                  <p>Real-time · auditable scoring</p>
                   <div class="meter">
-                    <div class="meter__row"><span>ESI · Verified</span><b><span data-countup="86" id="esiScore">0</span><i>/100</i></b></div>
+                    <div class="meter__row"><span>PHI · Optimized</span><b><span data-countup="86" id="esiScore">0</span><i>/100</i></b></div>
                     <div class="meter__track"><span class="meter__fill" id="esiFill" style="--p:86%"></span></div>
                   </div>
                 </div>
@@ -207,11 +207,11 @@
               <li class="pstep" data-step="3">
                 <span class="pstep__node"><span class="icon icon--link-solid" aria-hidden="true"></span></span>
                 <div class="pstep__body">
-                  <h3>Credential decision</h3>
-                  <p>Issue · note · withhold</p>
+                  <h3>Workflow action</h3>
+                  <p>Deploy · review · hold</p>
                   <div class="chips">
-                    <span class="chip chip--solid">Issue credential</span>
-                    <span class="chip chip--warn"><span class="icon icon--arrow-path" aria-hidden="true"></span> Issue with note</span>
+                    <span class="chip chip--solid">Deploy workflow</span>
+                    <span class="chip chip--warn"><span class="icon icon--arrow-path" aria-hidden="true"></span> Run with review</span>
                   </div>
                 </div>
               </li>
